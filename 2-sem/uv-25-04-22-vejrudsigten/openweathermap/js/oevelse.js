@@ -34,8 +34,7 @@ fetch("http://api.openweathermap.org/data/2.5/weather?q=Aarhus&lang=da&units=met
         
         // Vejrsymbol 
         '<figure>' +
-        '<img src="http://openweathermap.org/img/wn/' + data.weather[0].icon +
-        '.png" alt="Vejrsymbol">' +
+        '<img class="rund" src="billeder/' + data.weather[0].icon + '.png" alt="Vejrsymbol">' +
         '</figure>' +
        
         '</section>' // afslutter #weatherInfo taggen
