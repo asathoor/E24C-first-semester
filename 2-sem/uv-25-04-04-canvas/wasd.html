@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/canvas-noter.css">
+</head>
+<body>
+    <h1>WASD</h1>
+
+    <!-- scenen -->
+    <canvas id="scene" width="400" height="400"></canvas>
+    
+    <aside>
+        <button onclick="tux()">Pingvin</button>
+    </aside>    
+    <div id="skjult">
+        <!-- transparent figur (wasd)-->
+        <img id="figur" src="billeder/penguin-158551__180.webp" alt="wasd">
+    </div>
+
+<script>
+// Scenen
+let canvas = document.querySelector("#scene") // selector
+let c = canvas.getContext("2d") // vi tegner i 2D a la Flanagan ;-)
+let ctx = c // og laver et alias der svarer til W3 eksempler ;-)
+
+// Farver
+let tomat = "#FF6347" // Tomat (Tomato)
+let guld = "rgba(255, 99, 71, 0.4)" // Guld (Gold)
+let groenGul = "#ADFF2F" // Grøn gul (Green Yellow)
+let turkis = "#00CED1" // Mørk turkis (Dark Turquoise)
+let blaa = "#8A2BE2" // Blå violet (Blue Violet)
+let moerk = "black" // mørk kontrast
+let lys = "white" // lys kontrast
+
+// Du får ofte brug for at slette lærredet
+let sletLaerred = (navn) => {
+    c.clearRect(0, 0, canvas.width, canvas.height) // renser lærredet
+}
+
+
+
+        let tux = () => {
+
+// begynd med at slette scenen
+ctx.clearRect(0, 0, canvas.width, canvas.height)
+// fordi: så kan du flytte rundt med tingene
+
+// byg scenen op igen
+// baggrund, mellemgrund, figur, forgrund ...
+// lad passende funktioner som gøre dette for dig ...
+
+// flyt en figur med tastetryk
+let figur = document.getElementById("figur")
+let figurX = 0
+let figurY = 0
+let figurWidth = 100
+let figurHeight = 100
+let figurSpeed = 10
+let figurDirection = 0 // 0 = ingen retning
+
+// i computerspil får du måske brug for
+let hitpoints = 200
+
+// tilføj figuren til canvaset
+ctx.drawImage(figur, figurX, figurY, figurWidth, figurHeight)
+// tilføj eventlistener til canvaset
+
+// WASD tasterne
+let moveUp = 87 // W
+let moveDown = 83 // S
+let moveLeft = 65 // A
+let moveRight = 68 // D
+
+// tilføj eventlistener til canvaset
+let tastetryk = (event) => {
+    switch(event.keyCode) {
+        case moveUp:
+            figurY -= figurSpeed 
+            break
+        case moveDown:
+            figurY += figurSpeed
+            break
+        case moveLeft:
+            figurX -= figurSpeed
+            break
+        case moveRight:
+            figurX += figurSpeed
+            break
+        // PS: kan bruges med MaKeyMaKeys w.a.s.d. på bagsiden af kortet
+}
+
+    // opdaterer scenen
+    ctx.clearRect(0, 0, canvas.width, canvas.height) // slet lærredet
+    // tegn baggrunden igen etc. etc.
+    ctx.drawImage(figur, figurX, figurY, figurWidth, figurHeight)
+}
+
+// tilføj eventlistener til canvaset
+document.addEventListener("keydown", tastetryk)
+}
+
+let init = () => {
+    console.log("init virker")
+    tux()
+}
+
+init()
+
+</script>
+
+</body>
+</html>

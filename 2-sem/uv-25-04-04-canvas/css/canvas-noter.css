@@ -1,0 +1,67 @@
+/**
+* Fil: canvas-noter.css
+*/
+body {
+    text-align: center;
+    background-color: darkblue;
+    font-family: cursive;
+    color: white;
+}
+
+/* Scenen */
+#scene {
+    border: 5px dotted rgb(225, 57, 177);
+    background-color: rgb(253, 242, 230);
+    border-radius: 12%;
+}
+
+/* 
+    Billeder skal være til stede for at kunne hentes ind i canvas. 
+    Derfor skjuler vi dem her.
+*/
+#skjult {
+    display: none;
+}
+
+/* Layout */ 
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Billede */
+#ridder {
+    width: 400;
+    height: auto;
+}
+
+/* Sektionen som indeholder vores canvas */
+#geometria {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Knapperne */
+button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #b21265; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Sidste knap får en anden farve */
+button:last-child {
+    background-color: rgb(3, 70, 27);
+}

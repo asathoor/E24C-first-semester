@@ -1,0 +1,5 @@
+/* Leaflet i klassen css */
+#map { 
+    height: 180px; 
+    border: 2px solid red;
+}

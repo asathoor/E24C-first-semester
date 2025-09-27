@@ -1,0 +1,15 @@
+      /* google font: Berkshire */
+      @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
+      body {
+          text-align: center;
+          font-family: sans serif;
+          font-size: large;
+          background: black;
+          color: lawngreen;
+          font-family: 'Berkshire Swash', cursive;
+      }
+
+      .weatherInfo {
+          border: 1px solid lawngreen;
+      }

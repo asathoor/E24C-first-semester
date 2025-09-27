@@ -41,7 +41,7 @@ var polygon = L.polygon([
 
 
 // popup'ere forbindes med variablen:
-marker.bindPopup("<b>Hva' så da!</b><br>Jeg er en popup.")
+marker.bindPopup(" Damparken i Haderslev")
 //circle.bindPopup("I am a circle.")
 //polygon.bindPopup("I am a polygon.")
 
@@ -69,6 +69,11 @@ map.on('click', onMapClick) // viser positionen i en alert
 
 /** Interaktive funktioner */
 // flyTo()
-let flyvTil = ( position, zoom) => {
+let flyvTil = ( position, zoom, abc) => {
     map.flyTo( position, zoom )
+    
+    // herefter kan scriptet starte lyd, video etc.
+    // ændre innerHTML (DOM'en)
+    // style noget .... etc. etc. etc. 
+    tekst.innerHTML = abc
 }

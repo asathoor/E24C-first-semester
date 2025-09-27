@@ -1,0 +1,58 @@
+/**
+* Fil: canvas-noter.css
+*/
+
+body {
+    text-align: center;
+    background-color: darkblue;
+    font-family: cursive;
+    color: white;
+}
+
+#scene {
+    border: 5px dotted rgb(225, 57, 177);
+    background-color: rgb(253, 242, 230);
+    border-radius: 12%;
+}
+
+#skjult {
+    display: none;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#ridder {
+    width: 400;
+    height: auto;
+}
+
+#geometria {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #b21265; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:last-child {
+    background-color: rgb(172, 232, 255);
+}

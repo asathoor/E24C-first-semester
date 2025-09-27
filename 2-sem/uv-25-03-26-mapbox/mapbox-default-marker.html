@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Add a default marker to a web map</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+
+<h1>Mapbox</h1>
+<h2>Sådan bruger du et "stylet" kort</h2>
+    
+<div id="map"></div>
+
+<ol>
+    <li>Rediger kortet</li>
+    <li>Giv det et passende navn</li>
+    <li>Make public</li>
+    <li>I script: tilføj token og URL til din "map-style"</li>
+</ol>
+
+<script>
+    // token (BRUG DIN EGEN TOKEN HER)
+	mapboxgl.accessToken = 'pk.eyJ1IjoiYXNhdGhvb3IiLCJhIjoiY2oyd3hlbzU3MDA5NzJxbm9iMjczanJndCJ9.HahDB7Z1rrD5THIYQh6t4g';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/asathoor/cm8podewb007m01sh9pko53m4',
+        center: [12.550343, 55.665957],
+        zoom: 8
+    });
+
+    // Create a default Marker and add it to the map.
+    const marker1 = new mapboxgl.Marker()
+        .setLngLat([12.554729, 55.70651])
+        .addTo(map);
+
+    // Create a default Marker, colored black, rotated 45 degrees.
+    const marker2 = new mapboxgl.Marker({ color: 'black', rotation: 45 })
+        .setLngLat([12.65147, 55.608166])
+        .addTo(map);
+</script>
+
+</body>
+</html>

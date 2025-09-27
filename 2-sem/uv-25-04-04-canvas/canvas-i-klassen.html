@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas i klassen</title>
+
+    <style>
+        #scene {
+            border: 3px solid blueviolet;
+        }
+        #skjult {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Canvas i klassen</h1>
+    </header>
+
+    <main>
+        <canvas id="scene" width="600" height="400"></canvas>
+
+        <div id="skjult">
+            <img 
+                id="pingo" 
+                src="billeder/penguin-158551__180.webp" 
+                alt="pingo">
+        </div>
+
+        <aside id="kontrolpanel">
+
+            <!-- tegn noget -->
+            <button onclick="minFirkant()">Firkant</button>
+
+            <!-- viskelæder i funktion -->
+            <button onclick="sletLaerred()">Slet alt</button>
+
+        </aside>
+    </main>
+
+    <footer>
+        &copy; Jensen 2025
+    </footer>
+    
+    <script>
+        /* Canvas intro */
+
+        // Globale variabler
+        let canvas = document.querySelector("#scene")
+        let c = canvas.getContext("2d")
+        let ctx = c
+
+        // farver
+        let tomat = "#FF6347" // Tomat (Tomato)
+        let guld = "rgba(255, 99, 71, 0.4)" // Guld (Gold)
+        let groenGul = "#ADFF2F" // Grøn gul (Green Yellow)
+        let turkis = "#00CED1" // Mørk turkis (Dark Turquoise)
+        let blaa = "#8A2BE2" // Blå violet (Blue Violet)
+        let moerk = "black" // mørk kontrast
+        let lys = "white" // lys kontrast
+
+        // et "viskelæder"
+        let sletLaerred = (navn) => {
+            c.clearRect(0, 0, canvas.width, canvas.height) // renser lærredet
+        }
+
+        // tegn en firkant
+        ctx.beginPath() 
+        ctx.lineWidth = "10"
+        ctx.strokeStyle = guld
+        ctx.fillStyle = turkis
+        ctx.rect(0, 0, 123, 123) // kontur, x, y, strX, strY
+        ctx.stroke()
+        ctx.fillRect(0,0,600,400) // fyldt firkant
+
+
+        // cirkel
+        ctx.beginPath() // begynder stien
+        ctx.arc(100, 100, 50, 0, Math.PI * 2)
+        ctx.fillStyle = turkis // "blyanten er rød"
+        ctx.fill() // fylder cirklen med farve
+        ctx.stroke() // stregen sættes ind, der tegnes ...
+
+
+        let minFirkant = () => {
+            // alert("virker det?")
+            ctx.font = "60px Arial"
+            ctx.lineWidth = "2"
+            ctx.strokeStyle = tomat
+            ctx.fillStyle = moerk
+            ctx.strokeText("Mojn do!", 100, 200)
+        }
+
+    let visPingo = () => {
+        let image = document.getElementById("pingo")
+        ctx.drawImage(image, 120,300, 100,100) // tegner et billede
+    }
+
+    let init = () => {
+        //alert("Hva' så?")
+        visPingo()
+    }
+    
+    init()
+
+        
+
+    </script>
+</body>
+</html>

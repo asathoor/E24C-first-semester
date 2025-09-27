@@ -12,14 +12,27 @@ body {
     color:rgb(230, 252, 230);
 }
 
+header, footer {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: indigo;
+    color:rgb(230, 252, 230);
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 24px;
+}
+
 /** Kortets container */
 #map { 
-    height: 40vh;
+    height: 42vh;
     border: 2px solid rgb(102, 179, 43);
-    border-radius: 50%;
 }
 
 #knapper {
     padding: 5%;
     text-align: center;
+}
+
+#tekst {
+    text-align: center;
+    font-size: larger;
 }

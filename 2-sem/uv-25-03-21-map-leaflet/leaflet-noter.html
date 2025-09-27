@@ -22,12 +22,19 @@
     <h1>Leaflet</h1>
     <h2>OpenStreetmap Overlay via API</h2>
 
-    <h3>Quick Start Guide</h3>
+    <h3>Noter fra "Quick Start Guide"</h3>
 
     <p>Sådan ser koden ud, når du følger quick start vejledningen.</p>
 
     <!-- Herunder indlæses kortet, husk at give det en bredde -->
     <aside id="map"></aside>
+
+    <!-- interaktiv -->
+        <section id="knapper">
+            <button onclick="map.panTo([56.121335,10.160218], 19)">Sønderhøj</button>
+            <button onclick="flyvTil([55.673212,12.56866], 16)">Flyv til Tivoli, København</button>
+            <button onclick="map.panTo([55.391415,10.383496],17)">Panorer til Odense, Munkemose</button>
+        </section>
     <!-- containeren behøvs altså ikke at være en div! -->
 
     <h2>Øvelse A) Geografisk kort</h2>
@@ -36,8 +43,8 @@
         <li>Gem denne position i en variabel med et passende navn.</li>
         <li>Lav et kort, der centrerer på Sønderhøj 7G, ved hjælp af variablen.</li>
         <li>Lav en polygon rundt om hele Erhvervsakademiets Campus - inklusive "Guldtanden".</li>
-        <li>Tilføj popups til fx kantinen, togstationen mv.</li>
-        <li>Brug passende ikoner til popups fra Font Awesome</li>
+        <li>Tilføj markører på kortet med passende popups til fx kantinen, togstationen mv.</li>
+        <li>Brug passende ikoner og billeder i popups, evt. fra libraries som Font Awesome</li>
         <li>Fremstil "custom markers" dvs. markører i form af transparente billeder du selv har lavet</li>
     </ul>
 
